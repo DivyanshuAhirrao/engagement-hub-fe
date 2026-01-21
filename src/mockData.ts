@@ -411,14 +411,6 @@ export class MockDataService {
     return result;
   }
 }
-
-// ============================================
-// Update API clients to use mock data
-// src/api/propositions.api.ts (UPDATED)
-// ============================================
-
-// import { MockDataService } from "@/services/mockData.service";
-
 export interface GetPropositionsParams {
   name?: string;
   lineOfBusiness?: LineOfBusiness;
