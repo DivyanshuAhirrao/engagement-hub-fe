@@ -40,7 +40,7 @@ export default ({ mode }: ConfigEnv) => {
       open: true,
     },
     build: {
-      outDir: "./build",
+      outDir: "dist",
       target: "esnext",
     },
   });
