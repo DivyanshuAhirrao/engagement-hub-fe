@@ -101,68 +101,65 @@ const PropositionDetails: React.FC = () => {
   return (
     <>
       <DynamicPage
-        title="Hello"
-        // headerTitle={
-        // <DynamicPageTitle
-        //   header={proposition.name}
-        //   breadcrumbs={
-        //     <Button
-        //       design="Transparent"
-        //       onClick={() => navigate("/propositions")}
-        //     >
-        //       ← Back to List
-        //     </Button>
-        //   }
-        //   actions={
-        //     <>
-        //       <Button
-        //         design="Emphasized"
-        //         onClick={() => navigate(`/propositions/${id}/edit`)}
-        //       >
-        //         Edit
-        //       </Button>
-        //       <Button design="Negative" onClick={() => setDeleteDialog(true)}>
-        //         Delete
-        //       </Button>
-        //     </>
-        //   }
-        // >
-        //   <ObjectStatus
-        //     state={
-        //       proposition.status === "ACTIVE" ? "Critical" : "Indication01"
-        //     }
-        //   >
-        //     {proposition.status}
-        //   </ObjectStatus>
-        // </DynamicPageTitle>
-        // }
-        // content={
-        //   <DynamicPageHeader>
-        //     <FlexBox direction="Column" style={{ gap: "1rem" }}>
-        //       <FlexBox style={{ gap: "2rem" }}>
-        //         <div>
-        //           <Label>Line of Business</Label>
-        //           <div>{proposition.lineOfBusiness}</div>
-        //         </div>
-        //         <div>
-        //           <Label>Created</Label>
-        //           <div>{formatDateTime(proposition.createdAt)}</div>
-        //         </div>
-        //         <div>
-        //           <Label>Last Updated</Label>
-        //           <div>{formatDateTime(proposition.updatedAt)}</div>
-        //         </div>
-        //       </FlexBox>
-        //       {proposition.description && (
-        //         <div>
-        //           <Label>Description</Label>
-        //           <div>{proposition.description}</div>
-        //         </div>
-        //       )}
-        //     </FlexBox>
-        //   </DynamicPageHeader>
-        // }
+        titleArea={
+          <DynamicPageTitle
+            breadcrumbs={
+              <Button
+                design="Transparent"
+                onClick={() => navigate("/propositions")}
+              >
+                ← Back to List
+              </Button>
+            }
+            actionsBar={
+              <>
+                <Button
+                  design="Emphasized"
+                  onClick={() => navigate(`/propositions/${id}/edit`)}
+                >
+                  Edit
+                </Button>
+                <Button design="Negative" onClick={() => setDeleteDialog(true)}>
+                  Delete
+                </Button>
+              </>
+            }
+          >
+            {proposition.name}
+            <ObjectStatus
+              state={
+                proposition.status === "ACTIVE" ? "Critical" : "Indication01"
+              }
+            >
+              {proposition.status}
+            </ObjectStatus>
+          </DynamicPageTitle>
+        }
       >
+        <DynamicPageHeader>
+          <FlexBox direction="Column" style={{ gap: "1rem" }}>
+            <FlexBox style={{ gap: "2rem" }}>
+              <div>
+                <Label>Line of Business</Label>
+                <div>{proposition.lineOfBusiness}</div>
+              </div>
+              <div>
+                <Label>Created</Label>
+                <div>{formatDateTime(proposition.createdAt)}</div>
+              </div>
+              <div>
+                <Label>Last Updated</Label>
+                <div>{formatDateTime(proposition.updatedAt)}</div>
+              </div>
+            </FlexBox>
+            {proposition.description && (
+              <div>
+                <Label>Description</Label>
+                <div>{proposition.description}</div>
+              </div>
+            )}
+          </FlexBox>
+        </DynamicPageHeader>
         <div style={{ padding: "2rem" }}>
           <Title level="H4" style={{ marginBottom: "1rem" }}>
             Plans ({proposition.plans.length})

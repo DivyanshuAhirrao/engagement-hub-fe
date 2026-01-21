@@ -1,0 +1,80 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage & reports
+coverage/
+*.lcov
+.nyc_output
+report.*.json
+
+# Build artifacts
+dist/
+build/
+lib-cov/
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Dependency directories
+node_modules/
+jspm_packages/
+bower_components/
+
+# TypeScript
+*.tsbuildinfo
+typings/
+
+# Caches
+.cache/
+.eslintcache
+.rpt2_cache/
+.rts2_cache_*/
+.npm
+.yarn-integrity
+
+# Environment
+.env
+.env.test
+.env.local
+
+# IDE / Editor
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.nbproject/private/
+.settings/
+.springBeans
+.sts4-cache
+.apt_generated
+.classpath
+.factorypath
+.project
+
+# Misc tools
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Output of 'npm pack'
+*.tgz
+
+# Maven Wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# Database files
+*.db
